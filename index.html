@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ster group</title>
-
+    
+    <!-- กำหนดสไตล์ของหน้าเว็บ -->
     <style>
+        /* การตั้งค่าพื้นฐานสำหรับทั้งหน้า */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,21 +15,25 @@
             background-color: #F5EDED;
             color: #6482AD;
         }
+        /* ส่วนหัวของหน้า (header) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
         }
+        /* ลิงก์ในส่วน header */
         header a {
             text-decoration: none;
             color: #7FA1C3;
             margin: 0 10px;
         }
+        /* ลิงก์ที่กำลังแสดงอยู่ (active) */
         .active {
             color: #6482AD;
             font-weight: bold;
         }
+        /* กล่องเนื้อหา (container) */
         .container {
             display: flex;
             justify-content: center;
@@ -35,13 +41,11 @@
             flex-direction: column;
             text-align: center;
             min-height: 90vh;
-            padding: 20px;
         }
         .container h1,
         .container h2,
         .container p {
             margin: 0;
-            line-height: 2; 
         }
         .container img {
             border-radius: 50%;
@@ -50,26 +54,19 @@
             object-fit: cover;
             margin: 20px 0;
         }
-        .scroll-indicator {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            color: #6482AD;
-        }
     </style>
 </head>
-
 <body>
+    <!-- ส่วนหัวของเว็บไซต์ -->
     <header>
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
-            <a href="project.html">Projects</a>
+            <a href="project.html">Project</a>
             <a href="#">Contact</a>
         </nav>
     </header>
-
+    <!-- เนื้อหาหลักของหน้า -->
     <div class="container">
         <h1>WELCOME ! <span style="color:#6482AD;">👋</span></h1>
         <h2> WE ARE STER GANG</h2>
