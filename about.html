@@ -87,6 +87,27 @@
             object-fit: cover;
             margin: 20px 0;
         }
+        @media screen and (max-width: 1024px) {
+            .column {
+                width: 50%; /* ให้มี 2 คอลัมน์เมื่อหน้าจอกว้างน้อยกว่า 1024px */
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .column {
+                width: 100%; /* ให้มี 1 คอลัมน์เมื่อหน้าจอกว้างน้อยกว่า 768px */
+            }
+            header {
+                padding: 15px;
+                flex-direction: column; /* ให้แถบ navigation เป็นแนวตั้ง */
+                align-items: flex-start;
+            }
+            header a {
+                margin: 5px 0;
+            }
+        }
+
+
     </style>
 </head>
 <body>
