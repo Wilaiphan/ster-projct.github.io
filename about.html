@@ -36,27 +36,15 @@
             color: #6482AD;
             font-weight: bold;
         }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            min-height: 90vh;
-            padding: 20px;
+        .contrainer {
+            text-align: center; 
+            padding: 10px 0; 
+            line-height: 1.5; 
         }
-        .container h1,
-        .container h2,
-        .container p {
-            margin: 0;
-            line-height: 2; 
-        }
-        .container img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            margin: 20px 0;
+        .contrainer h2, .contrainer p {
+            margin: 10px 0; /* ลดการชนของข้อความ */
+            font-size: 16px;
+            color: #474e5d; /* เพิ่มสีข้อความ */
         }
         .scroll-indicator {
             display: flex;
@@ -81,10 +69,13 @@
         .card {
             margin: 16px;
             width: 250px;
-            height: 300px;
-            border-radius: 12px;
+            height: auto;
+            padding: 15px;
             object-fit: cover;
-            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            border-radius: 8px;
         }
         @media screen and (max-width: 1024px) {
             .column {
