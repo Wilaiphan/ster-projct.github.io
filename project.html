@@ -57,7 +57,7 @@
             background-color: #ddd;
         }
         .code-container {
-            width: 70%;
+            width: 100%;
             padding: 20px;
         }
         pre {
@@ -85,8 +85,8 @@
     <div class="container">
         <div class="projects">
             <h3>Projects</h3>
-            <button class="project-btn" onclick="loadFileContent('curryshop-2022.py')">Project 1</button>
-            <button class="project-btn" onclick="loadFileContent('another-project.py')">Project 2</button>
+            <button class="project-btn" onclick="loadFileContent('curryshop-2022.py')">Curry and Rice Shop (ปี1)</button>
+            <button class="project-btn" onclick="loadFileContent('fanmeet_booking-2022.cpp')">Fanmeet Booking (ปี2)</button>
             <button class="project-btn" onclick="loadFileContent('example-project.py')">Project 3</button>
         </div>
         <div class="code-container">
@@ -95,7 +95,6 @@
         </div>
     </div>
 
-    <!-- JavaScript สำหรับการแสดงผล -->
     <script>
         function loadFileContent(fileName) {
             fetch('curryshop-2022.py') // ชื่อไฟล์ที่ต้องการโหลด
@@ -115,5 +114,26 @@
                 });
         }
     </script>
+    <script>
+        function loadFileContent(fileName) {
+            fetch('fanmeet_booking-2022.cpp') // ชื่อไฟล์ที่ต้องการโหลด
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('File not found or cannot be loaded.');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    const codeDisplayElement = document.getElementById('code-display');
+                    codeDisplayElement.textContent = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching file:', error);
+                    alert('Cannot load the file content. Please try again later.');
+                });
+        }
+    </script>
+
+
 </body>
 </html>
