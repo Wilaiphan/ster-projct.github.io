@@ -95,7 +95,7 @@
         <div class="projects">
             <h3 style="text-align: center;">Our Project</h3>
             <button class="project-btn" onclick="loadFileContent('curryshop-2022.py')">Curry and Rice Shop (ปี1)</button>
-            <button class="project-btn" onclick="loadFileContent('fanmeet_booking-2022.cpp')">Fanmeet Booking (ปี2)</button>
+            <button class="project-btn" onclick="loadFileContent('fanmeet_booking-2022.cpp')">Fanmeet Booking (ปี1)</button>
             <button class="project-btn" onclick="loadFileContent('example-project.py')">Project 3</button>
         </div>
         <div class="code-container">
@@ -106,7 +106,7 @@
 
     <script>
         function loadFileContent(fileName) {
-            fetch('curryshop-2022.py') // ชื่อไฟล์ที่ต้องการโหลด
+            fetch(fileName) // ชื่อไฟล์ที่ต้องการโหลด
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('File not found or cannot be loaded.');
