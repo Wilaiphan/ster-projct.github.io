@@ -123,26 +123,5 @@
                 });
         }
     </script>
-    <script>
-        function loadFileContent(fileName) {
-            fetch('fanmeet_booking-2022.cpp') // ชื่อไฟล์ที่ต้องการโหลด
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('File not found or cannot be loaded.');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    const codeDisplayElement = document.getElementById('code-display');
-                    codeDisplayElement.textContent = data;
-                })
-                .catch(error => {
-                    console.error('Error fetching file:', error);
-                    alert('Cannot load the file content. Please try again later.');
-                });
-        }
-    </script>
-
-
 </body>
 </html>
