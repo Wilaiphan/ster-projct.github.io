@@ -101,8 +101,7 @@
             <h3 style="text-align: center;">Our Project</h3>
             <button class="project-btn" onclick="loadFileContent('curryshop-2022.py','Member : Wilaiphan | Panita | Warisara ')">Curry and Rice Shop (ปี1)</button>
             <button class="project-btn" onclick="loadFileContent('fanmeet_booking-2022.cpp', 'Member : Wilaiphan | Panita | Warisara รายละเอียเพิ่มเติม <a href=\'https://onlinegdb.com/bUDQ7u--L\' target=\'_blank\'>เพิ่มเติม</a>')">Fanmeet Booking (ปี1)</button>
-            <button class="project-btn" onclick="loadFileContent('', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ดาวน์โหลดไฟล์ .jar <a href=\'puzzle game-2023.jar\' download>เพิ่มเติม</a>')">Puzzle Game (ปี2)
-                <p>หลังจากดาวน์โหลดไฟล์ .jar แล้ว, คุณสามารถเปิดไฟล์นี้ได้ด้วยการใช้คำสั่งใน Command Line หรือผ่าน Java Runtime Environment (JRE) บนเครื่องของคุณ.</p>
+            <button class="project-btn" onclick="loadFileContent('', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ดาวน์โหลดไฟล์ .jar <a href=\'puzzle game-2023.jar\' download>เพิ่มเติม</a> หลังจากดาวน์โหลดไฟล์ .jar แล้ว, คุณสามารถเปิดไฟล์นี้ได้ด้วยการใช้คำสั่งใน Command Line หรือผ่าน Java Runtime Environment (JRE) บนเครื่องของคุณ')">Puzzle Game (ปี2)
             </button>
         </div>
         </div>
@@ -116,10 +115,8 @@
     <script>
         function loadFileContent(fileName,description) {
             if (fileName === '') {
-                // ถ้าไม่มีชื่อไฟล์ (เช่นในกรณีของ Project 3) ก็แสดงคำอธิบายเท่านั้น
-                const descriptionElement = document.getElementById('description');
                 descriptionElement.innerHTML = description;
-                document.getElementById('code-display').textContent = ''; // ลบเนื้อหาของโค้ด
+                codeDisplayElement.textContent = 'No code available for this project.';
                 return;
             }
 
