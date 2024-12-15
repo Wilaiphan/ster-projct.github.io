@@ -60,6 +60,14 @@
         *, *:before, *:after {
             box-sizing: inherit;
         }
+        .row {
+            display: flex; /* ใช้ Flexbox */
+            justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+            gap: 20px; /* เพิ่มช่องว่างระหว่างการ์ด */
+            flex-wrap: wrap; /* ให้การ์ดขึ้นบรรทัดใหม่เมื่อหน้าจอแคบลง */
+            padding: 0 50px; /* เว้นช่องว่างด้านซ้ายและขวา */
+            box-sizing: border-box;
+        }
         .column {
             float: left;
             width: 25%;
@@ -81,6 +89,7 @@
             overflow: hidden; /* ป้องกันเนื้อหาล้นออก */
         }
         img {
+            object-fit: cover;
             padding: 5px;
             border-radius: 12px;
             width: 150px;
