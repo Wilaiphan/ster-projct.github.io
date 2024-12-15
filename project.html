@@ -121,7 +121,9 @@
                 })
                 .then(data => {
                     const codeDisplayElement = document.getElementById('code-display');
+                    const descriptionElement = document.getElementById('description');
                     codeDisplayElement.textContent = data;
+                    descriptionElement.textContent = description; 
                 })
                 .catch(error => {
                     console.error('Error fetching file:', error);
