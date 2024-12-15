@@ -39,13 +39,15 @@
         /* จัด layout หลัก */
         .container {
             display: flex;
-            align-items: center;
             flex: 1;
         }
         .projects {
-            width: auto;
+            width: 20;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* จัดปุ่มให้อยู่กึ่งกลางในแนวตั้ง */
+            align-items: center; /* จัดปุ่มให้อยู่กึ่งกลางในแนวนอน */
             padding: 20px;
-            text-align: center;
         }
         .project-btn {
             display: block;
