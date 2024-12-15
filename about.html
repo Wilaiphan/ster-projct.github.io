@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* กำหนดสไตล์ให้กับเนื้อหาในเว็บไซต์ทั้งหมด */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,65 +16,67 @@
             background-color: #F5EDED;
             color: #6482AD;
         }
+        /* ส่วนหัวของเว็บไซต์ ใช้สำหรับเมนูนำทาง */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
         }
+        /*ลิงก์ในเมนูนำทาง */
         header a {
             text-decoration: none;
             color: #7FA1C3;
             margin: 0 10px;
         }
+        /* ส่วนที่เน้นข้อความหรือหัวข้อเกี่ยวกับทีม */
         .about-section {
             padding: 50px;
             text-align: center;
             background-color: #7FA1C3;
             color: white;
         }
+        /* ลิงก์ที่กำลังแสดงอยู่ (active) */
         .active {
             color: #6482AD;
             font-weight: bold;
         }
-        .contrainer {
+        /* จัดวางข้อมูลภายในการ์ด */
+        .container {
             text-align: center; 
             padding: 10px 0; 
             line-height: 1.5; 
         }
-        .contrainer h2, .contrainer p {
+        .container h2, .container p {
             margin: 10px 0; 
             font-size: 16px;
             color: #6482AD; 
         }
-        .scroll-indicator {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            color: #6482AD;
-        }
-        html {
-            box-sizing: border-box;
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit; /* ให้สืบทอดค่าจาก html */
         }
 
-        *, *:before, *:after {
-            box-sizing: inherit;
+        html {
+            box-sizing: border-box; /* กำหนดค่าพื้นฐานเป็น border-box */
         }
+
+        /* จัดเรียงการ์ดของสมาชิกในแนวนอน */
         .row {
             display: flex; 
             justify-content: space-between; 
-            gap: 10px; /* เพิ่มช่องว่างระหว่างการ์ด */
+            gap: 16px; /* เพิ่มช่องว่างระหว่างการ์ด */
             flex-wrap: wrap; 
             padding: 0 15px; /* เว้นช่องว่างด้านซ้ายและขวา */
             box-sizing: border-box;
         }
+        /* กำหนดขนาดของการ์ด */
         .column {
-            float: left;
             width: 20%;
-            margin-bottom: 16px;
             padding: 0 8px;
         }
+        /* กล่องที่แสดงข้อมูลสมาชิก */
         .card {
             width: 250px; 
             height: 400px; 
@@ -88,6 +91,7 @@
             text-align: center;
             overflow: hidden; /* ป้องกันเนื้อหาล้นออก */
         }
+        /* รูปภาพในการ์ด */
         img {
             object-fit: cover;
             padding: 5px;
@@ -95,6 +99,7 @@
             width: 150px;
             height: 250px;
         }
+        /*สำหรับปรับขนาดหน้าจอ */
         @media screen and (max-width: 1024px) {
             .column {
                 width: 40%; /* ให้มี 2 คอลัมน์เมื่อหน้าจอกว้างน้อยกว่า 1024px */
@@ -113,15 +118,15 @@
                 margin: 5px 0;
             }
         }
-
     </style>
+    
 </head>
 <body>
     <header>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html" class="active">About</a>
-            <a href="project.html">Projects</a>
+            <a href="project.html">Project</a>
             <a href="#">Contact</a>
         </nav>
     </header>
@@ -135,8 +140,8 @@
     <div class = "row">
         <div class = "column">
             <div class="card">
-                <img src="image/wlp.jpg" alt="Prim" style="width:100%">
-                <div class="contrainer">
+                <img src="image/wlp.jpg" alt="Prim">
+                <div class="container">
                     <h2>Wilaiphan Kunlachet</h2>
                     <p>CS 26</p>
                     <p><a href="mailto:wilaiphan.k@ku.th">wilaiphan.k@ku.th</a></p>
@@ -146,8 +151,8 @@
 
         <div class = "column">
             <div class="card">
-                <img src="image/eve.jpg" alt="Eve" style="width:100%">
-                <div class="contrainer">
+                <img src="image/eve.jpg" alt="Eve">
+                <div class="container">
                     <h2>Panita Yapolha</h2>
                     <p>CS 26</p>
                     <p><a href="mailto:panita.y@ku.th">panita.y@ku.th</a></p>
@@ -157,8 +162,8 @@
 
         <div class = "column">
             <div class="card">
-                <img src="image/waris.jpg" alt="Aum" style="width:100%">
-                <div class="contrainer">
+                <img src="image/waris.jpg" alt="Aum">
+                <div class="container">
                     <h2>Warisara Yeama</h2>
                     <p>CS 26</p>
                     <p><a href="mailto:warisara.yea@ku.th">warisara.yea@ku.th</a></p>
@@ -168,8 +173,8 @@
 
         <div class = "column">
             <div class="card">
-                <img src="image/za.jpg" alt="Za" style="width:100%">
-                <div class="contrainer">
+                <img src="image/za.jpg" alt="Za">
+                <div class="container">
                     <h2>suphattra Prasomsap</h2>
                     <p>CS 26</p>
                     <p><a href="mailto:suphattra.proso@ku.th">suphattra.proso@ku.th</a></p>
