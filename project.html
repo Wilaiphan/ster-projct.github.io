@@ -40,14 +40,18 @@
         /* จัด layout หลัก */
         .container {
             display: flex;
-            flex: 1;
+            justify-content: space-between;
+            align-self: start;
+            padding: 0 50px;
+            gap: 16px;
         }
         .projects {
+            flex: 1;
             width: 25%;
             background-color: #F8F8F8;
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            border-right: 1px solid #ddd;
+            border-right: 8px ;
         }
         .project-btn {
             display: block;
@@ -68,7 +72,11 @@
             padding: 20px;
         }
         .code-container h3 {
-            margin-bottom: 10px;
+            flex:2;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
         pre {
             background-color: #FFFFFF;
@@ -80,6 +88,17 @@
             overflow-y: auto;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin: 0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* เรียงแนวตั้ง */
+                padding: 0 20px; /* ลด padding สำหรับหน้าจอเล็ก */
+            }
+
+            .projects, .code {
+                flex: 1; /* แต่ละส่วนใช้พื้นที่เท่ากัน */
+                margin-bottom: 16px; /* ระยะห่างระหว่างส่วน */
+            }
         }
     </style>
 </head>
