@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5EDED;
+            color: #6482AD;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+        header a {
+            text-decoration: none;
+            color: #7FA1C3;
+            margin: 0 10px;
+        }
+        .active {
+            color: #6482AD;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            min-height: 90vh;
+            padding: 20px;
+        }
+        .container h1,
+        .container h2,
+        .container p {
+            margin: 0;
+            line-height: 2; 
+        }
+        .container img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 20px 0;
+        }
+        .scroll-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            color: #6482AD;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html" class="active">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>WELCOME ! <span style="color:#6482AD;">👋</span></h1>
+        <h2> WE ARE STER GANG</h2>
+        <p>Computer Science,Faculty of Science Sriracha </p>
+
+        <img src= "image/member.png">
+    </div>
+</body>
+</html>
