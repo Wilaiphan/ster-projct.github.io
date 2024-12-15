@@ -9,8 +9,11 @@
 
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: #F5EDED;
+            color: #6482AD;
         }
         html {
             box-sizing: border-box;
@@ -35,18 +38,41 @@
             background-color: #474e5d;
             color: white;
         }
-        .container {
-            padding: 0 16px;
+        .active {
+            color: #6482AD;
+            font-weight: bold;
         }
-
-        .container::after, .row::after {
-            content: "";
-            clear: both;
-            display: table;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
         }
         .active {
             color: #6482AD;
             font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            min-height: 90vh;
+            padding: 20px;
+        }
+        .container h1,
+        .container h2,
+        .container p {
+            margin: 0;
+            line-height: 2; 
+        }
+        .container img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 20px 0;
         }
     </style>
 
