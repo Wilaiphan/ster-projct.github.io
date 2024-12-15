@@ -65,34 +65,31 @@
 
         /* จัดเรียงการ์ดของสมาชิกในแนวนอน */
         .row {
-            display: flex; 
-            justify-content: space-between; 
-            gap: 16px; /* เพิ่มช่องว่างระหว่างการ์ด */
-            flex-wrap: wrap; 
-            padding: 0 15px; /* เว้นช่องว่างด้านซ้ายและขวา */
-            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px;
         }
         /* กำหนดขนาดของการ์ด */
         .column {
-            width: 20%;
-            padding: 0 8px;
+            flex: 1 1 calc(25% - 16px); /* กำหนดขนาดการ์ด */
+            max-width: 250px;
+            box-sizing: border-box;
         }
         /* กล่องที่แสดงข้อมูลสมาชิก */
         .card {
-            flex: 1 1 calc(25% - 16px);
-            max-width: 200px; /* กำหนดความกว้างสูงสุด */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อย */
+            background-color: #fff;
             border-radius: 12px;
-            overflow: hidden; /* ซ่อนส่วนที่เกิน */
-            background-color: #fff; /* เพิ่มพื้นหลังสีขาว */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
             text-align: center;
         }
         /* รูปภาพในการ์ด */
         .card img {
-            object-fit: cover;
-            padding: 5px;
-            width: 100%; /* ขยายให้เต็มกรอบ */
+            width: 100%;
             height: 250px;
+            object-fit: cover;
         }
         .card-container {
             display: flex;
@@ -100,15 +97,16 @@
             gap: 16px; /* ระยะห่างระหว่างการ์ด */
             justify-content: center; /* จัดกึ่งกลาง */
         }
+        /* ปรับการ์ดสำหรับหน้าจอขนาดเล็ก */
         @media (max-width: 768px) {
-            .card {
-                flex: 1 1 calc(50% - 16px); /* การ์ดจะกินพื้นที่ 50% ของแถว */
+            .column {
+                flex: 1 1 calc(50% - 16px); /* การ์ดจะกินพื้นที่ 50% */
             }
         }
 
         @media (max-width: 480px) {
-            .card {
-                flex: 1 1 100%; /* การ์ดจะกินพื้นที่เต็มหน้าจอ */
+            .column {
+                flex: 1 1 100%; /* การ์ดจะกินพื้นที่เต็ม */
             }
         }
     </style>
