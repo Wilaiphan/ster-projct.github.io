@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
 
+    <!-- กำหนดสไตล์ของหน้าเว็บ -->
     <style>
+        /* การตั้งค่าพื้นฐานสำหรับทั้งหน้า */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,21 +16,25 @@
             background-color: #F5EDED;
             color: #6482AD;
         }
+        /* ส่วนหัวของหน้า (header) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
         }
+        /* ลิงก์ในส่วน header */
         header a {
             text-decoration: none;
             color: #7FA1C3;
             margin: 0 10px;
         }
+        /* ลิงก์ที่กำลังแสดงอยู่ (active) */
         .active {
             color: #6482AD;
             font-weight: bold;
         }
+        /* กล่องเนื้อหา (container) */
         .container {
             display: flex;
             justify-content: center;
@@ -36,13 +42,12 @@
             flex-direction: column;
             text-align: center;
             min-height: 90vh;
-            padding: 20px;
         }
         .container h1,
         .container h2,
         .container p {
             margin: 0;
-            line-height: 2; 
+            line-height: 2
         }
         .container img {
             border-radius: 50%;
@@ -51,23 +56,53 @@
             object-fit: cover;
             margin: 20px 0;
         }
-        .scroll-indicator {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            color: #6482AD;
-        }
     </style>
 </head>
 <body>
+    <!-- ส่วนหัวของเว็บไซต์ -->
     <header>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="project.html" class="active">Projects</a>
+            <a href="project.html" class="active">Project</a>
             <a href="#">Contact</a>
         </nav>
     </header>
+    <div class="container">
+        <!-- Sidebar ด้านซ้าย -->
+        <div class="sidebar">
+            <button onclick="showProject('project1')">Curry and Rice Shop</button>
+            <button onclick="showProject('project2')">Fanmeet Booking</button>
+        </div>
+        <!-- Content ด้านขวา -->
+        <div class="content">
+            <div id="project1" class="project-details">
+                <h2>Project : Curry and Rice Shop (ปี 1)</h2>
+                <p><strong>Member:</strong> Wilaiphan, Panita, Warisara</p>
+                <button onclick="loadFileContent()">View Project File</button>
+                <pre id="fileContent" style="display:none; background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd;"></pre>
+            </div>
+        </div>
+        <script>
+            function loadFileContent() {
+                fetch('curryshop-2022.py') // ชื่อไฟล์ที่ต้องการแสดง
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('File not found or cannot be loaded.');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        const fileContentElement = document.getElementById('fileContent');
+                        fileContentElement.textContent = data;
+                        fileContentElement.style.display = 'block'; // แสดงเนื้อหาหลังโหลดเสร็จ
+                    })
+                    .catch(error => {
+                        console.error('Error fetching file:', error);
+                        alert('Cannot load the file content. Please try again later.');
+                    });
+            }
+        </script>
+            </div>
 </body>
 </html>
