@@ -114,6 +114,9 @@
 
     <script>
         function loadFileContent(fileName,description) {
+            const codeDisplayElement = document.getElementById('code-display');
+            const descriptionElement = document.getElementById('description');
+
             if (fileName === '') {
                 descriptionElement.innerHTML = description;
                 codeDisplayElement.textContent = 'No code available for this project.';
