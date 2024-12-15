@@ -39,6 +39,36 @@
             display: flex;
             min-height: 90vh;
         }
+        .projects {
+            width: 30%;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        .project-btn {
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            text-align: left;
+            cursor: pointer;
+        }
+        .project-btn:hover {
+            background-color: #ddd;
+        }
+        .code-container {
+            width: 70%;
+            padding: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            height: 300px;
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +81,39 @@
             <a href="#">Contact</a>
         </nav>
     </header>
+    <!-- ส่วนสำหรับแสดงโปรเจกต์ -->
+    <div class="container">
+        <div class="projects">
+            <h3>Projects</h3>
+            <button class="project-btn" onclick="loadFileContent('curryshop-2022.py')">Project 1</button>
+            <button class="project-btn" onclick="loadFileContent('another-project.py')">Project 2</button>
+            <button class="project-btn" onclick="loadFileContent('example-project.py')">Project 3</button>
+        </div>
+        <div class="code-container">
+            <h3>Code</h3>
+            <pre id="code-display">Select a project to view the code.</pre>
+        </div>
     </div>
+
+    <!-- JavaScript สำหรับการแสดงผล -->
+    <script>
+        function loadFileContent(fileName) {
+            fetch('curryshop-2022.py') // ชื่อไฟล์ที่ต้องการโหลด
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('File not found or cannot be loaded.');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    const codeDisplayElement = document.getElementById('code-display');
+                    codeDisplayElement.textContent = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching file:', error);
+                    alert('Cannot load the file content. Please try again later.');
+                });
+        }
+    </script>
 </body>
 </html>
