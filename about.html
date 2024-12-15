@@ -79,25 +79,37 @@
         }
         /* กล่องที่แสดงข้อมูลสมาชิก */
         .card {
-            width: 250px; 
-            height: 400px; 
+            flex: 1 1 calc(25% - 16px);
+            max-width: 200px; /* กำหนดความกว้างสูงสุด */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อย */
             border-radius: 12px;
-            background-color: #fff;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* จัดให้เนื้อหากระจายเท่ากัน */
-            align-items: center; /* จัดเนื้อหาให้อยู่ตรงกลาง */
+            overflow: hidden; /* ซ่อนส่วนที่เกิน */
+            background-color: #fff; /* เพิ่มพื้นหลังสีขาว */
             text-align: center;
-            overflow: hidden; /* ป้องกันเนื้อหาล้นออก */
         }
         /* รูปภาพในการ์ด */
-        img {
+        .card img {
             object-fit: cover;
             padding: 5px;
-            width: 90%; /* ขยายให้เต็มกรอบ */
-            height: 90%; /* ขยายให้เต็มกรอบ */
+            width: 100%; /* ขยายให้เต็มกรอบ */
+            height: 250px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap; /* ให้การ์ดเรียงต่อกันในแถวถัดไปเมื่อหน้าจอแคบ */
+            gap: 16px; /* ระยะห่างระหว่างการ์ด */
+            justify-content: center; /* จัดกึ่งกลาง */
+        }
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 16px); /* การ์ดจะกินพื้นที่ 50% ของแถว */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%; /* การ์ดจะกินพื้นที่เต็มหน้าจอ */
+            }
         }
     </style>
 </head>
