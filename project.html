@@ -34,27 +34,56 @@
             color: #6482AD;
             font-weight: bold;
         }
-        /* กล่องเนื้อหา (container) */
+        /* จัด layout หลัก */
         .container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
             min-height: 90vh;
         }
-        .container h1,
-        .container h2,
-        .container p {
-            margin: 0;
-            line-height: 2
+
+        /* Sidebar ด้านซ้าย */
+        .sidebar {
+            width: 20%;
+            background-color: #F0F0F0;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
-        .container img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            margin: 20px 0;
+        .sidebar button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            background-color: #7FA1C3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .sidebar button:hover {
+            background-color: #6482AD;
+        }
+
+        /* Content ด้านขวา */
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .project-details {
+            display: none; 
+            background-color: #FFF;
+            padding: 20px;
+            border: 1px solid #DDD;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .project-details h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -68,12 +97,16 @@
             <a href="#">Contact</a>
         </nav>
     </header>
+
+    <!-- Container หลัก -->
     <div class="container">
+
         <!-- Sidebar ด้านซ้าย -->
         <div class="sidebar">
-            <button onclick="showProject('project1')">Curry and Rice Shop</button>
+            <button onclick="showProject('project1','curryshop-2022.py')">Curry and Rice Shop</button>
             <button onclick="showProject('project2')">Fanmeet Booking</button>
         </div>
+
         <!-- Content ด้านขวา -->
         <div class="content">
             <div id="project1" class="project-details">
@@ -83,6 +116,8 @@
                 <pre id="fileContent" style="display:none; background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd;"></pre>
             </div>
         </div>
+        
+        <!-- JavaScript สำหรับการแสดงผล -->
         <script>
             function loadFileContent() {
                 fetch('curryshop-2022.py') // ชื่อไฟล์ที่ต้องการแสดง
