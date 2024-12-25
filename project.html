@@ -142,11 +142,12 @@
 
     <script>
         function display(title, description) {
-            // แสดงชื่อโปรเจกต์
-            document.getElementById('code-display').innerHTML = title;
-            // แสดงเนื้อหาในส่วนโค้ด
-            document.getElementById('description').innerHTML = description;
+        // แสดงชื่อโปรเจกต์ในส่วน 'code-title'
+        document.getElementById('code-title').innerHTML = title;
+        // แสดงเนื้อหาในส่วน 'description'
+        document.getElementById('description').innerHTML = description;
         }
+        
         function loadFileContent(fileName, description) {
             const codeDisplayElement = document.getElementById('code-display');
             const descriptionElement = document.getElementById('description');
