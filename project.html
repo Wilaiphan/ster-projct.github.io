@@ -35,14 +35,16 @@
 
         .container {
             display: flex;
-            flex: 1;
+            justify-content: space-between;
+            align-items: flex-start;
             padding: 20px;
+            gap: 20px;
         }
+
         .projects {
             width: 30%;
             background-color: white;
             border: 2px solid black;
-            margin-right: 20px;
             border-radius: 10px;
             padding: 20px;
         }
@@ -53,24 +55,22 @@
             margin-bottom: 20px;
         }
 
-        .projects .project-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .projects .project-list li {
+        .projects .project-btn {
+            display: block;
+            width: 100%;
             margin: 10px 0;
+            padding: 10px;
             text-align: center;
             font-weight: bold;
-            padding: 10px;
+            color: #6482AD;
+            background-color: #FFF;
             border: 1px solid #DDD;
             border-radius: 5px;
-            background-color: #FFF;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .projects .project-list li:hover {
+        .projects .project-btn:hover {
             background-color: #6482AD;
             color: #FFF;
         }
@@ -93,19 +93,10 @@
         .code-container p {
             font-size: 1em;
             margin-bottom: 15px;
+            color: #333;
         }
 
         .code-container pre {
-            flex: 1;
-            background-color: #F5F5F5;
-            padding: 15px;
-            border: 1px solid #DDD;
-            border-radius: 5px;
-            overflow-y: auto;
-            font-size: 0.9em;
-            line-height: 1.5;
-        }
-        pre {
             flex-grow: 1;
             background-color: #FFFFFF;
             border: 1px solid #DDD;
@@ -119,12 +110,6 @@
             word-wrap: break-word;
             margin: 0;
         }
-        .description {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
     </style>
 </head>
 <body>
@@ -141,22 +126,21 @@
     <!-- ส่วนสำหรับแสดงโปรเจกต์ -->
     <div class="container">
         <div class="projects">
-            <h3 style="text-align: center;">Our Project</h3>
+            <h3>Our Project</h3>
             <button class="project-btn" onclick="loadFileContent('curryshop-2022.py','Member : Wilaiphan | Panita | Warisara ')">Curry and Rice Shop (ปี1)</button>
             <button class="project-btn" onclick="loadFileContent('fanmeet_booking-2022.cpp', 'Member : Wilaiphan | Panita | Warisara รายละเอียเพิ่มเติม <a href=\'https://onlinegdb.com/bUDQ7u--L\' target=\'_blank\'>เพิ่มเติม</a>')">Fanmeet Booking (ปี1)</button>
-            <button class="project-btn" onclick="loadFileContent('', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ดาวน์โหลดไฟล์ .jar <a href=\'puzzle game-2023.jar\' download>เพิ่มเติม</a> หลังจากดาวน์โหลดไฟล์ .jar แล้ว, คุณสามารถเปิดไฟล์นี้ได้ด้วยการใช้คำสั่งใน Command Line หรือผ่าน Java Runtime Environment (JRE) บนเครื่องของคุณ')">Puzzle Game (ปี2)
-            </button>
+            <button class="project-btn" onclick="loadFileContent('', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ดาวน์โหลดไฟล์ .jar <a href=\'puzzle game-2023.jar\' download>เพิ่มเติม</a> หลังจากดาวน์โหลดไฟล์ .jar แล้ว, คุณสามารถเปิดไฟล์นี้ได้ด้วยการใช้คำสั่งใน Command Line หรือผ่าน Java Runtime Environment (JRE) บนเครื่องของคุณ')">Puzzle Game (ปี2)</button>
         </div>
-        </div>
+
         <div class="code-container">
             <h3>Code</h3>
-            <p id="description" class="description">Description</p>
+            <p id="description">Description</p>
             <pre id="code-display">Select a project to view the code.</pre>
         </div>
     </div>
 
     <script>
-        function loadFileContent(fileName,description) {
+        function loadFileContent(fileName, description) {
             const codeDisplayElement = document.getElementById('code-display');
             const descriptionElement = document.getElementById('description');
 
@@ -166,7 +150,7 @@
                 return;
             }
 
-            fetch(fileName) // ชื่อไฟล์ที่ต้องการโหลด
+            fetch(fileName)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('File not found or cannot be loaded.');
@@ -174,8 +158,6 @@
                     return response.text();
                 })
                 .then(data => {
-                    const codeDisplayElement = document.getElementById('code-display');
-                    const descriptionElement = document.getElementById('description');
                     codeDisplayElement.textContent = data;
                     descriptionElement.innerHTML = description;
                 })
@@ -187,3 +169,4 @@
     </script>
 </body>
 </html>
+
