@@ -141,6 +141,12 @@
     </div>
 
     <script>
+        function display(title, description) {
+            // แสดงชื่อโปรเจกต์
+            document.getElementById('code-display').innerHTML = title;
+            // แสดงเนื้อหาในส่วนโค้ด
+            document.getElementById('description').innerHTML = description;
+        }
         function loadFileContent(fileName, description) {
             const codeDisplayElement = document.getElementById('code-display');
             const descriptionElement = document.getElementById('description');
@@ -166,14 +172,6 @@
                     console.error('Error fetching file:', error);
                     alert('Cannot load the file content. Please try again later.');
                 });
-        }
-    </script>
-    <script>
-        function display(title, description) {
-            // แสดงชื่อโปรเจกต์
-            document.getElementById('code-display').innerHTML = title;
-            // แสดงเนื้อหาในส่วนโค้ด
-            document.getElementById('description').innerHTML = description;
         }
     </script>
 </body>
