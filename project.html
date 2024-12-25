@@ -6,36 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Project</title>
     <style>
+        /* การตั้งค่าพื้นฐานสำหรับทั้งหน้า */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #F5EDED;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
+            color: #6482AD;
         }
-
+        /* ส่วนหัวของหน้า (header) */
         header {
-            background-color: #F8F0F0;
-            padding: 20px;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px 50px;
         }
-
+        /* ลิงก์ในส่วน header */
         header a {
             text-decoration: none;
-            color: #6482AD;
-            font-size: 1em;
-            margin: 0 15px;
+            color: #7FA1C3;
+            margin: 0 10px;
         }
-
-        header a.active {
+        /* ลิงก์ที่กำลังแสดงอยู่ (active) */
+        .active {
+            color: #6482AD;
             font-weight: bold;
-            color: #333;
         }
 
         .container {
@@ -43,7 +38,6 @@
             flex: 1;
             padding: 20px;
         }
-
         .projects {
             width: 30%;
             background-color: white;
