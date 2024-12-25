@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* กำหนดสไตล์ให้กับเนื้อหาในเว็บไซต์ทั้งหมด */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5EDED;
+            color: #6482AD;
+        }
+        /* ส่วนหัวของเว็บไซต์ ใช้สำหรับเมนูนำทาง */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+        /*ลิงก์ในเมนูนำทาง */
+        header a {
+            text-decoration: none;
+            color: #7FA1C3;
+            margin: 0 10px;
+        }
+        /* ส่วนที่เน้นข้อความหรือหัวข้อเกี่ยวกับทีม */
+        .about-section {
+            width: 100%;
+            padding: 50px;
+            text-align: center;
+            background-color: #7FA1C3;
+            color: white;
+        }
+        /* ลิงก์ที่กำลังแสดงอยู่ (active) */
+        .active {
+            color: #6482AD;
+            font-weight: bold;
+        }
+        /* จัดวางข้อมูลภายในการ์ด */
+        .container {
+            text-align: center; 
+            padding: 10px 0; 
+            line-height: 1.5; 
+        }
+        .container h2, .container p {
+            margin: 10px 0; 
+            font-size: 16px;
+            color: #6482AD; 
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit; /* ให้สืบทอดค่าจาก html */
+        }
+
+        html {
+            box-sizing: border-box; /* กำหนดค่าพื้นฐานเป็น border-box */
+        }
+
+        /* จัดเรียงการ์ดของสมาชิกในแนวนอน */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            padding: 20px;
+        }
+        /* กำหนดขนาดของการ์ด */
+        .column {
+            flex: 1 1 calc(25% - 16px); /* กำหนดขนาดการ์ด */
+            max-width: 250px;
+            box-sizing: border-box;
+        }
+        /* กล่องที่แสดงข้อมูลสมาชิก */
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        /* รูปภาพในการ์ด */
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap; /* ให้การ์ดเรียงต่อกันในแถวถัดไปเมื่อหน้าจอแคบ */
+            gap: 16px; /* ระยะห่างระหว่างการ์ด */
+            justify-content: center; /* จัดกึ่งกลาง */
+        }
+        /* ปรับการ์ดสำหรับหน้าจอขนาดเล็ก */
+        @media (max-width: 768px) {
+            .column {
+                flex: 1 1 calc(50% - 16px); /* การ์ดจะกินพื้นที่ 50% */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .column {
+                flex: 1 1 100%; /* การ์ดจะกินพื้นที่เต็ม */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ส่วนหัวของเว็บไซต์ -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html">Project</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+    <div class = "about-section" >
+        <h1>Thank you so much for visiting our website! We truly appreciate your time and interest. 
+            If you have any questions or need further assistance, please don’t hesitate to reach out to us.</h1>
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <div class = "row">
+        <div class = "column">
+            <div class="card">
+                <img src="image/wlp.jpg" alt="Prim">
+                <div class="container">
+                    <h2>Wilaiphan Kunlachet</h2>
+                    <p>Prim</p>
+                    <p><a href="mailto:wilaiphan.k@ku.th">wilaiphan.k@ku.th</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "column">
+            <div class="card">
+                <img src="image/eve.jpg" alt="Eve">
+                <div class="container">
+                    <h2>Panita Yapolha</h2>
+                    <p>Eve</p>
+                    <p><a href="mailto:panita.y@ku.th">panita.y@ku.th</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "column">
+            <div class="card">
+                <img src="image/waris.jpg" alt="Aum">
+                <div class="container">
+                    <h2>Warisara Yeama</h2>
+                    <p>Aum</p>
+                    <p><a href="mailto:warisara.yea@ku.th">warisara.yea@ku.th</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "column">
+            <div class="card">
+                <img src="image/za.jpg" alt="Za">
+                <div class="container">
+                    <h2>suphattra Prasomsap</h2>
+                    <p>Za</p>
+                    <p><a href="mailto:suphattra.proso@ku.th">suphattra.proso@ku.th</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
