@@ -134,7 +134,7 @@
         </div>
 
         <div class="code-container">
-            <h3>Project</h3>
+            <h3 id="code-title">Project</h3>
             <p id="description">Description</p>
             <pre id="code-display">Select a project to view the code.</pre>
         </div>
@@ -171,9 +171,9 @@
     <script>
         function display(title, description) {
             // แสดงชื่อโปรเจกต์
-            document.getElementById('code-title').innerHTML = title;
+            document.getElementById('code-display').innerHTML = title;
             // แสดงเนื้อหาในส่วนโค้ด
-            document.getElementById('code-display').innerHTML = description;
+            document.getElementById('description').innerHTML = description;
         }
     </script>
 </body>
