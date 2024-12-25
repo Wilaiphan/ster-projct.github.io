@@ -144,18 +144,18 @@
         function loadFileContent(fileName, description) {
             const codeDisplayElement = document.getElementById('code-display');
             const descriptionElement = document.getElementById('description');
+            
+            if (fileName === '') {
+                descriptionElement.innerHTML = description;
+                codeDisplayElement.textContent = 'No code available for this project.';
+                return;
+            }
 
             if (fileName.endsWith('.pdf')) {
             descriptionElement.innerHTML = description;
             // ใช้ <embed> หรือ <iframe> เพื่อฝังไฟล์ PDF
             codeDisplayElement.innerHTML = `<embed src="${fileName}" width="100%" height="600px" type="application/pdf">`;
             return;
-            }
-
-             (fileName === '') {
-                descriptionElement.innerHTML = description;
-                codeDisplayElement.textContent = 'No code available for this project.';
-                return;
             }
 
             fetch(fileName)
