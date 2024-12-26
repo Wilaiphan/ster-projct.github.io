@@ -129,23 +129,21 @@
                 justify-content: center;
                 text-align: center;
             }
-
             .container {
-                flex-direction: column;
+                flex-direction: column; /* เรียงคอนเทนต์ในแนวตั้ง */
+                align-items: stretch;  /* ขยายให้เต็มหน้าจอ */
             }
-
             .projects, .code-container {
                 flex: 1 1 auto;
-                max-width: 100%;
+                max-width: 100%; /* ขยายเต็มหน้าจอ */
+                margin: 0;
             }
         }
-
         @media (max-width: 480px) {
             .projects .project-btn {
                 font-size: 0.9em;
                 padding: 8px;
             }
-
             .code-container pre {
                 font-size: 0.85em;
             }
