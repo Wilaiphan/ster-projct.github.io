@@ -157,7 +157,7 @@
             if (fileName.endsWith('.pdf')) {
             descriptionElement.innerHTML = description;
             // ใช้ <embed> หรือ <iframe> เพื่อฝังไฟล์ PDF
-            codeDisplayElement.innerHTML = `<embed src="${fileName}" width="100%" height="700px" type="application/pdf">`;
+            codeDisplayElement.innerHTML = `<iframe src="${fileName}" width="100%" height="700px" style="border:none; overflow:auto;" allowfullscreen></iframe>`;
             return;
             }
 
