@@ -14,39 +14,49 @@
             background-color: #F5EDED;
             color: #6482AD;
         }
+
         /* ส่วนหัวของหน้า (header) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 20px;
+            background-color: #FFF;
+            border-bottom: 2px solid #7FA1C3;
         }
+
         /* ลิงก์ในส่วน header */
         header a {
             text-decoration: none;
             color: #7FA1C3;
             margin: 0 10px;
         }
+
         /* ลิงก์ที่กำลังแสดงอยู่ (active) */
         .active {
             color: #6482AD;
             font-weight: bold;
         }
 
+        /* คอนเทนเนอร์สำหรับส่วนโปรเจกต์และโค้ด */
         .container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: flex-start;
             padding: 20px;
             gap: 20px;
         }
 
+        /* คอนเทนเนอร์ของโปรเจกต์ */
         .projects {
-            width: 30%;
+            flex: 1 1 300px;
+            max-width: 100%;
             background-color: white;
             border: 2px solid #7FA1C3;
             border-radius: 10px;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         .projects h3 {
@@ -75,14 +85,15 @@
             color: #FFF;
         }
 
+        /* คอนเทนเนอร์สำหรับโค้ด */
         .code-container {
-            flex: 1;
+            flex: 2 1 500px;
+            max-width: 100%;
             background-color: white;
             border: 2px solid #7FA1C3;
             border-radius: 10px;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
+            box-sizing: border-box;
         }
 
         .code-container h3 {
@@ -110,13 +121,42 @@
             word-wrap: break-word;
             margin: 0;
         }
+
+        /* Media Queries สำหรับหน้าจอขนาดเล็ก */
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .projects, .code-container {
+                flex: 1 1 auto;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects .project-btn {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+
+            .code-container pre {
+                font-size: 0.85em;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- ส่วนหัวของเว็บไซต์ -->
     <header>
         <nav>
-            <a href="index.html" >Home</a>
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="project.html" class="active">Project</a>
             <a href="contact.html">Contact</a>
@@ -129,11 +169,8 @@
             <h3>Our Project</h3>
             <button class="project-btn" onclick="loadFileContent('curryshop-2022.py','Member : Wilaiphan | Panita | Warisara <br> ใช้ภาษา python ')">Curry and Rice Shop (ปี1)</button>
             <button class="project-btn" onclick="loadFileContent('fanmeet_booking-2022.cpp', 'Member : Wilaiphan | Panita | Warisara <br> ใช้ภาษา C++ รายละเอียด <a href=\'https://onlinegdb.com/bUDQ7u--L\' target=\'_blank\'>คลิ๊ก</a>')">Fanmeet Booking (ปี1)</button>
-            <button class="project-btn" onclick="loadFileContent('', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ดาวน์โหลดไฟล์ .jar <a href=\'puzzle game-2023.jar\' download>ดาวน์โหลด</a> หลังจากดาวน์โหลดไฟล์ .jar แล้ว สามารถเปิดไฟล์นี้ได้ด้วยการใช้คำสั่งใน Command Line หรือผ่าน Java Runtime Environment (JRE) บนเครื่องของคุณได้')">Puzzle Game (ปี2)</button>
             <button class="project-btn" onclick="loadFileContent('Project-database.pdf','Member : Wilaiphan | Panita | Suphattra <br> ใช้โปรแกรม MySQL ')">Database (ปี2)</button>
-            <button class="project-btn" onclick="loadFileContent('880_SASTER-final.pdf', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ใช้ Figma <a href=\'https://www.figma.com/design/OhP1mWDNfPZXUkOxHHfgID/SA-Website?node-id=0-1&t=knKQY4l6wuzw0aWa-1\' target=\'_blank\'>คลิ๊ก</a>')">SA - Hotel reservation system (ปี3)</button>
-            <button class="project-btn" onclick="loadFileContent('Group-D.pdf', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ใช้ Figma <a href=\'https://www.figma.com/design/sfVEwryaU1XHTLtKdimt3Z/pm-(Copy)?node-id=0-1&t=KxKuqwFHPc6eItR2-1\' target=\'_blank\'>คลิ๊ก</a> <br> สไลด์นำเสนอพร้อมวิดิโอ <a href=\'https://www.canva.com/design/DAGTEc-Z2EE/CJEg7SuaHyp_CQXBTS519w/edit\' target=\'_blank\'>เพิ่มเติม</a>')">Project Management and Digital Startup (ปี3)</button>
-            <button class="project-btn" onclick="loadFileContent('', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ใช้ tableau <a href=\'https://public.tableau.com/views/project-1_17290643582210/homepage-1?:language=th-TH&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link\' target=\'_blank\'>คลิ๊ก</a>')">Business Data Dimension and Report Management(ปี3)</button>
+            <button class="project-btn" onclick="loadFileContent('880_SASTER-final.pdf', 'Member : Wilaiphan | Panita | Warisara | Suphattra <br> ใช้ Figma')">SA - Hotel reservation system (ปี3)</button>
         </div>
 
         <div class="code-container">
@@ -147,18 +184,17 @@
         function loadFileContent(fileName, description) {
             const codeDisplayElement = document.getElementById('code-display');
             const descriptionElement = document.getElementById('description');
-            
+
             if (fileName === '') {
                 descriptionElement.innerHTML = description;
-                codeDisplayElement.textContent = "No code,Please click the attached link.";
+                codeDisplayElement.textContent = "No code, please click the attached link.";
                 return;
             }
 
             if (fileName.endsWith('.pdf')) {
-            descriptionElement.innerHTML = description;
-            // ใช้ <embed> หรือ <iframe> เพื่อฝังไฟล์ PDF
-            codeDisplayElement.innerHTML = `<iframe src="${fileName}" width="100%" height="700px" style="border:none; overflow:auto;" allowfullscreen></iframe>`;
-            return;
+                descriptionElement.innerHTML = description;
+                codeDisplayElement.innerHTML = `<iframe src="${fileName}" width="100%" height="500px" style="border:none; overflow:auto;" allowfullscreen></iframe>`;
+                return;
             }
 
             fetch(fileName)
